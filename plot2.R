@@ -2,9 +2,7 @@
 
 source("./data.R")
 
-data <- loadData("./household_power_consumption.txt")
-head(data)
-summary(data)
+data <- loadData("household_power_consumption")
 
 # create a PNG file (named 'plot2.png', width 480 pixels, height 480 pixels) containing the histogramm
 png(filename="./plot2.png", width=480, height=480)

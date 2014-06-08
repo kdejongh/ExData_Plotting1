@@ -5,8 +5,13 @@
 library(plyr)
 library(lubridate)
 
-loadData <- function(file) {
-    data <- read.csv2(file)
+loadData <- function(fileName) {
+    txtFile <- paste(fileName, ".txt", sep="")
+    if (!file.exists(txtFile)) {
+        zipFile <- paste(fileName, ".zip", sep="")
+        unzip(zipFile);
+    }
+    data <- read.csv2(txtFile)
     data <- mutate(data,
                    Date=dmy(Date),
                    Time=hms(Time))

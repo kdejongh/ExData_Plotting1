@@ -2,7 +2,7 @@
 
 source("./data.R")
 
-data <- loadData("./household_power_consumption.txt")
+data <- loadData("household_power_consumption")
 head(data)
 summary(data)
 
